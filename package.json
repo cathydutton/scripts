@@ -1,0 +1,61 @@
+{
+  "name": "Pod-build-scripts",
+  "version": "1.0.0",
+  "description": "Starting point for web applications, with PostCSS, Javascript and Markdown",
+  "main": "index.js",
+  "author": "Cathy Dutton",
+  "license": "MIT",
+  "devDependencies": {
+
+  },
+  "config": {
+    "directoryCSS": "dist/assets/css",
+    "directoryScripts": "dist/assets/scripts",
+    "directoryImg": "dist/assets/img",
+
+    "srcCSS": "src/assets/css/**.css",
+    "srcScripts": "src/assets/scripts/**.js",
+    "srcMarkup": "src/assets/markup",
+    "srcImg": "src/assets/img",
+
+    "distCSS": "dist/assets/css/styles.min.css",
+    "distScripts": "dist/assets/scripts/scripts.min.js",
+    "distMarkup": "dist",
+    "distImg": "dist/assets/img"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "directorys": "mkdirp $npm_package_config_directoryCSS $npm_package_config_directoryScripts $npm_package_config_directoryImg",
+
+    "dev:img": "imagemin $npm_package_config_srcImg $npm_package_config_distImg  -p",
+    "dev:css": "postcss -c tasks/dev/postcss.json -o $npm_package_config_distCSS $npm_package_config_srcCSS",
+
+
+
+
+    "dev:markup": "vulcanize --inline-css src/assets/markup/index.html > dist/index.html",
+
+    "dev:scripts": "eslint $npm_package_config_srcScripts $npm_package_config_distScripts",
+
+
+    "dev:build": "npm run directorys && npm run dev:scripts && npm run dev:css && npm run dev:img && npm run dev:markup",
+
+
+    "watch:css": "onchange '$npm_package_config_srcCSS' -- npm run dev:css",
+    "watch:js": "onchange '$npm_package_config_srcScripts' -- npm run dev:scrpts",
+    "watch:img": "onchange '$npm_package_config_srcImg' -- npm run dev:img",
+    "watch:markup": "onchange '$npm_package_config_srcMarkup' -- npm run dev:markup",
+
+    "watch": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run watch:img' 'npm run watch:markup'",
+
+
+    "open": "opener http://localhost:9090",
+    "serve": "browser-sync start --server --files 'dist/css/*.css, dist/js/*.js, **/*.html, !node_modules/**/*.html'",
+
+   "dev": "npm run dev:build && npm run dev:open && npm run watch ",
+
+   "production": "npm run clean && npm run production:build"
+
+
+  }
+}

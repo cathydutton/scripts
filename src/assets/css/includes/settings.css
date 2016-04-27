@@ -1,0 +1,20 @@
+/*
+  Settings
+  ----------------------------------- */
+
+:root {
+  --break-mobile: 20em;
+  --break-phablet: 30em;
+  --break-tablet: 48em;
+  --break-desktop: 63.750em;
+  --break-wide: 80em;
+
+  --black: #2a2a2a;
+  --white: #fff;
+  --accent: #ffa600;
+  --grey: #aaa19a;
+
+}
+
+
+

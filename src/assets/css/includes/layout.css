@@ -1,0 +1,27 @@
+/*
+  Layout
+  ----------------------------------- */
+/*
+header,
+footer,
+section {
+  grid-container: true;
+}
+
+.wrapper {
+  grid-container: true;
+}
+
+.twelve-elements {
+  col-span: mobile(1,1);
+  col-span: phablet(1,2);
+  col-span: tablet(1,4);
+  col-span: desktop(1,6);
+  col-span: wide(1,12);
+}
+
+.six-elements {
+  col-span: mobile(1,2);
+  col-span: tablet(1,3);
+  col-span: desktop(1,6);
+}*/

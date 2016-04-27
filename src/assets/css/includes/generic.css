@@ -1,0 +1,45 @@
+/*
+  Generic
+  ----------------------------------- */
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black);
+  margin: 0;
+  max-width: var(--break-wide);
+  min-width: var(--break-mobile);
+  padding: 0;
+  width: 100%;
+}
+
+blockquote {
+  background: var(--grey);
+  border: 1px solid var(--accent);
+  font-size: 1em;
+  margin: 0;
+  padding: 10px 7px;
+  width: 98%;
+}
+
+pre {
+  background: var(--white);
+  border: 1px solid var(--grey);
+  font-size: 1em;
+  padding: 10px 7px;
+  width: 98%;
+}

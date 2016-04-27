@@ -1,0 +1,16 @@
+/*
+    Main browser styles
+    ----------------------------------- */
+
+@import 'includes/settings';
+@import 'includes/generic';
+@import 'includes/base';
+@import 'includes/base-typography';
+@import 'includes/layout';
+
+ /* Objects */
+@import 'includes/objects-buttons';
+
+ /* Modules */
+@import 'includes/component-header';
+@import 'includes/component-footer';

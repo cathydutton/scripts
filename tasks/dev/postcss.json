@@ -1,0 +1,6 @@
+{
+  "use": ["autoprefixer", "postcss-import", "postcss-custom-properties", "postcss-clearfix"],
+  "autoprefixer": {
+    "browsers": "> 5%"
+  }
+}
